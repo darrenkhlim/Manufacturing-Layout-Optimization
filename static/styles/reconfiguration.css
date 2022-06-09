@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Montserrat, Arial;
+	background: black;
+	color: #fff;
+	height: 100vh;
+	line-height: 1.6;
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.lead, p {
+	font-size: 26px;
+}
+
+section#reconfiguration {
+	background-image: url('/static/images/reconfiguration-background.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.reconfiguration-overlay {
+	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.9) 250%); 
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.reconfiguration-contents {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	row-gap: 10px;
+}
+
+.box {
+  border: 3px solid #333;
+  border-radius: 0.5rem;
+  margin: 0.25rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow:hidden;
+  color: black;
+}
+
+.box span {
+  pointer-events: none;
+}
+
+.drag-start {
+  opacity: 0.4;
+}
+
+.drag-enter {
+  border-style: dashed;
+}
+
+.box:nth-child(odd).drag-enter {
+  transform: rotate(15deg);
+}
+
+.box:nth-child(even).drag-enter {
+  transform: rotate(-15deg);
+}
+
+.box:nth-child(odd).drag-start {
+  transform: rotate(15deg) scale(0.75);
+}
+
+.box:nth-child(even).drag-start {
+  transform: rotate(-15deg) scale(0.75);
+}
+
+@media (max-width: 600px) {
+  html { 
+    font-size: 14px; 
+  }
+  .box {
+    width: 4rem; 
+    height: 4rem; 
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+}
+
+.draggable {
+  width: 70%;
+  padding: 3px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.draggable p {
+  position: relative;
+  font-size: 22px;
+  font-family: Montserrat;
+}
+
+.box-grid {
+  list-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  grid-auto-flow: row dense;
+  min-height: 30vh;
+  min-width: 120vh;
+}
+
+.divRec {
+  cursor: move;
+  padding: 35px 20px;
+  font-size: 20px;
+  background-color: #ff0000;
+  grid-area: span 1/span 2;
+}
+
+.divQuad {
+  cursor: move;
+  padding: 35px 20px;
+  font-size: 20px;
+  background-color: #fff333;
+  grid-area: span 1/span 1;
+}
+
+.divCard {
+  cursor: move;
+  padding: 35px 20px;
+  font-size: 20px;
+  background-color: #00ff00;
+  grid-area: span 2/span 1;
+}
+
+.ghost {
+  border: 1px dashed #000;
+  background-color: #fff;
+}
+
+.custom-drag-ghost {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+  background-color: #edb458;
+  border: 1px solid #e8871e;
+}
+
+.hidden-drag-ghost {
+  opacity: 0;
+}
+
+.transition {
+  transition: all 2s ease-out .5s; 
+  top: 0;
+}
+
+#layout {
+  display: none;
+}
+
+.example-button {
+	font-family: Montserrat, Arial;
+	background-color: #8B0000;
+	border: none;
+	color: white;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 6px;
+	margin-top: 15px;
+  margin-bottom: 15px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+	transition: background-color 0.15s, color 0.15s;
+}
+
+.example-button:hover {
+	background-color: white;
+	color: #8B0000;
+}
+
+.example-button:active {
+	opacity: 0.7;
+}
+
+table {
+  position:static;
+  font-size: 22px;
+  left: 0;
+  right: 0;
+  width:120vh;
+}
+
+th {
+  background-color: #8B0000;
+  color: white;
+  text-align: center;
+  height: 30px;
+  padding: 5px;
+}
+
+td {
+  text-align: center;
+  padding: 5px;
+}
+
+table, td, th {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+a {
+  display: inline-block;
+  transition: .3s;
+  font-weight:bold;
+  text-decoration:none;
+  color: #f4f4f4;
+}
+
+.layout-summary {
+  height: 200px; 
+  overflow-x: auto;
+}

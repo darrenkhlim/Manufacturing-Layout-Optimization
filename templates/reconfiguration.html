@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>Systems Design Project</title>
+  <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../static/styles/reconfiguration.css">
+  <link rel="stylesheet" href="../static/styles/navbar.css">
+  <link rel="stylesheet" href="../static/styles/scroll-bar.css">
+	<script src="../static/main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+          <img class="halliburton-logo" src="../static/images/logo.png">
+      </div>
+      <div class="tabs">
+          <a href="/#home">Home</a>
+          <a href="/#context">Context</a>
+          <a href="/#methodology">Methodology</a>
+          <a href="/#results">Results</a>
+          <a href="/#example">Example</a>
+      </div>
+      <div class="about-tab">
+          <a href="/about">About</a>
+      </div>
+    </div>
+		<section id="reconfiguration">
+			<div class="reconfiguration-overlay">
+				<div class="reconfiguration-contents">
+					<p>Drag the departments against each other to reconfigure their position</p>
+          <p>Click on 'Confirm Layout' to submit your solution, and the average material distance for each production order will be shown</p>
+          <p>Click on 'Propose Layout' for the suggested solution based on the CRAFT Heuristic</p>
+					<div class="box-grid" id="list1">    
+						<div class="box" draggable={{order_layouts[0].draggable}} style="background-color: {{order_layouts[0].html_hex}}" id={{order_layouts[0].html_id}}><div class='inside'>{{order_layouts[0].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[1].draggable}} style="background-color: {{order_layouts[1].html_hex}}" id={{order_layouts[1].html_id}}><div class='inside'>{{order_layouts[1].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[2].draggable}} style="background-color: {{order_layouts[2].html_hex}}" id={{order_layouts[2].html_id}}><div class='inside'>{{order_layouts[2].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[3].draggable}} style="background-color: {{order_layouts[3].html_hex}}" id={{order_layouts[3].html_id}}><div class='inside'>{{order_layouts[3].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[4].draggable}} style="background-color: {{order_layouts[4].html_hex}}" id={{order_layouts[4].html_id}}><div class='inside'>{{order_layouts[4].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[5].draggable}} style="background-color: {{order_layouts[5].html_hex}}" id={{order_layouts[5].html_id}}><div class='inside'>{{order_layouts[5].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[6].draggable}} style="background-color: {{order_layouts[6].html_hex}}" id={{order_layouts[6].html_id}}><div class='inside'>{{order_layouts[6].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[7].draggable}} style="background-color: {{order_layouts[7].html_hex}}" id={{order_layouts[7].html_id}}><div class='inside'>{{order_layouts[7].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[8].draggable}} style="background-color: {{order_layouts[8].html_hex}}" id={{order_layouts[8].html_id}}><div class='inside'>{{order_layouts[8].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[9].draggable}} style="background-color: {{order_layouts[9].html_hex}}" id={{order_layouts[9].html_id}}><div class='inside'>{{order_layouts[9].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[10].draggable}} style="background-color: {{order_layouts[10].html_hex}}" id={{order_layouts[10].html_id}}><div class='inside'>{{order_layouts[10].html_name}}</div></div>
+						<div class="box" draggable={{order_layouts[11].draggable}} style="background-color: {{order_layouts[11].html_hex}}" id={{order_layouts[11].html_id}}><div class='inside'>{{order_layouts[11].html_name}}</div></div>
+					</div>
+				</div>
+				<div class="reconfiguration-contents">
+					<div class="confirmation-form">
+						<form method="POST" action="#" id="confirmation">
+							<input class="btn" type="text" name="layout" id="layout" value={{layout}}>
+							<input  type="submit" name="confirm_button" value='Confirm Layout' class="example-button">
+							<input  type="submit" name="reset_button" value="Reset Layout" class="example-button">
+							<input  type="submit" name="craft_button" value="Propose Layout" class="example-button">
+						</form>
+					</div>
+				</div>
+				<div class="reconfiguration-contents">
+					<div class="layout-summary">
+						{% if all_layouts|length < 1 %}
+              <p></p>
+						{% else %}
+              <table>
+                <tr>
+                  <th>Layout</th>
+                  <th>Average Material Distance (Units)</th>
+                  <th style="width:100px">Actions</th>
+                </tr>
+                  {% for layout in all_layouts %}
+                    <tr>
+                      <td>{{layout.name}}</td>
+                      <td>{{layout.distance}}</td>
+                      <td>
+                        <a href="/delete/{{layout.id}}" style="text-decoration: underline;">Delete</a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+              </table>
+            {% endif %}
+          </div>
+				</div>
+			</div>
+		</section>	
+	</div>
+</body>
+</html>

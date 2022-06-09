@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>Systems Design Project</title>
+  <link rel="icon" type="image/x-icon" href="../static/images/favicon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../static/styles/home.css">
+  <link rel="stylesheet" href="../static/styles/navbar.css">
+  <link rel="stylesheet" href="../static/styles/scroll-bar.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img class="halliburton-logo" src="../static/images/logo.png">
+      </div>
+      <div class="tabs">
+        <a href="/#home">Home</a>
+        <a href="/#context">Context</a>
+        <a href="/#methodology">Methodology</a>
+        <a href="/#results">Results</a>
+        <a href="/#example">Example</a>
+      </div>
+      <div class="about-tab">
+        <a href="/about">About</a>
+      </div>
+    </div>
+    <section id="home">
+      <div class="home-overlay">
+        <div class="home-contents">
+          <h2>Improvement Heuristics for Manufacturing Layout Optimization</h2>
+          <p>Team Members: Mittal Stuti, Pang Ling, Lim Kang Heng, Zhang Xin</p>
+          <p>Department Supervisor: A/P Chen Nan | Industrial Supervisor: Mr Lee Ming Wei</p>
+        </div>
+      </div>
+    </section>
+    <section id="context">
+      <div class="context-overlay">
+        <div class="context-contents">
+          <h2>Company Background</h2>
+          <p>Founded in 1919, Halliburton is a global leader in the oil field service industry</p>
+          <p>The company engages throughout the reservoir life cycle of Exploration, Discovery, Appraisal, Development & Production </p>
+          <a href="https://www.halliburton.com/en/about-us" target="_blank">Read more about Halliburton</a>
+        </div>
+        <div class="context-contents">
+          <h2>Problem Description</h2>
+          <p>The facility layout in Singapore was designed in 2011 & was duplicated from the US Model. This led to:</p>
+          <p>1. Less optimised material flow (i.e., Backtracking)</p>
+          <p>2. Higher material handling costs (i.e., Transportation Costs)</p>
+          <p>3. Inefficient use of resources</p>
+        </div>
+        <div class="context-contents">
+          <h2>Project Objectives</h2>
+          <p>1. Assess the performance of the existing manufacturing floor</p>
+          <p>2. Perform optimization methodologies to recommend layout alternernatives</p>
+          <p>3. Ascertain financial feasibility of recommendations</p>
+        </div>
+      </div>
+    </section>
+    <section id="methodology">
+      <div class="methodology-overlay">
+        <div class="methodology-contents">
+          <h2>Computerized Relative Allocation of Facilities Technique (CRAFT)</h2>
+          <p>The heuristic considers pairwise facility exchanges amongst work centers</p>
+          <p style="width:83%;">For example, with an initial layout of (Machining, Marking, Sandblasting), the following alternative layouts are created</p>
+          <div class="methodology-image">
+            <img class="craft-image" src="../static/images/craft-example.png">
+          </div>
+          <p>The layout that minimizes the objective function is selected and the process iterates greedily until no further improvement can be attained</p>
+        </div>
+      </div>
+    </section>
+    <section id="results">
+      <div class="results-overlay">
+        <div class="results-contents">
+          <div class="results-contents-improvements">
+            <h2>Summary of Layout Improvements</h2>
+            <table class="results-table1">
+              <tr>
+                <th style='border:none;'>Business Unit<sup>1</sup></th>
+                <th style='border:none;'>Average Material Distance Improvement (%)</th>
+                <th style='border:none;'>Average Admin Distance Improvement (%)</th>
+                <th style='border:none;'>Objective Score Improvement (%)<sup>2</sup></th>
+              </tr>
+              <tr>
+                <td style='border:none;'>Liner Hanger</td>
+                <td style='border:none;'>3.10</td>
+                <td style='border:none;'>-11.30</td>
+                <td style='border:none;'>2.87</td>
+              </tr>
+              <tr>
+                <td style='border:none;'>General Completions</td>
+                <td style='border:none;'>2.22</td>
+                <td style='border:none;'>3.09</td>
+                <td style='border:none;'>2.24</td>
+              </tr>
+              <tr>
+              <td style='border:none;'>Intelligent Completions</td>
+              <td style='border:none;'>0.77</td>
+              <td style='border:none;'>-2.26</td>
+              <td style='border:none;'>0.76</td>
+              </tr>
+            </table>
+            <p style="font-size: 1.1rem; text-align:left; margin-top:0px;"><sup>1</sup> each business unit has a different production line and layout</p>
+            <p style="font-size: 1.1rem; text-align:left; margin-top:0px;"><sup>2</sup> the objective score is defined as a weighted sum of material & admin rectilinear distances for each production orders</p>
+          </div>
+          <div class="results-contents-economic">
+            <h2>Engineering Economic Analysis</h2>
+            <table class="results-table2">
+                <tr>
+                  <th style='border:none;'>Business Unit</th>
+                  <th style='border:none;'>Present Worth ($)<sup>3</sup></th>
+                  <th style='border:none;' style="width:70%">Production Order Increment (%)<sup>4</sup></th>
+                </tr>
+                <tr>
+                  <td style='border:none;'>Liner Hanger</td>
+                  <td style='border:none;'>-19,010</td>
+                  <td style='border:none;'>320</td>
+                </tr>
+                <tr>
+                  <td style='border:none;'>General Completions</td>
+                  <td style='border:none;'>-5,239</td>
+                  <td style='border:none;'>40</td>
+                </tr>
+                <tr>
+                  <td style='border:none;'>Intelligent Completions</td>
+                  <td style='border:none;'>-24,241</td>
+                  <td style='border:none;'>580</td>
+                </tr>
+            </table>
+            <p style="font-size: 1.1rem; text-align:left; margin-top:0px;"><sup>3</sup> the present worth quantifies the value of investment for each reconfiguration project</p>
+            <p style="font-size: 1.1rem; text-align:left; margin-top:0px;"><sup>4</sup> sensitivty analysis to ascertain the percentage increment in production orders for a non-negative investment balance</p>
+          </div>
+          <div class="results-contents-conclusion">
+            <p>The project concludes that the manufacturing floor is <strong>SUBOPTIMAL</strong>, where layout improvements can be achieved through the CRAFT Heuristic</p>
+            <p>However, due to the high costs for reconfiguration, the project recommends <strong>MAINTAINING THE STATUS QUO</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="example">
+      <div class="example-overlay">
+        <div class="example-contents">
+          <p>You are an industrial engineer at ABC Manufacturing Plant & you are tasked to determine the optimal facilty layout<br>To aid in your decision making process, the manufacturing shop packets are provided & they contain the following information:</p>
+          <table class="production-table">
+            <tr>
+              <th style='border:none;'>Production Order Number<sup>5</sup></th>
+              <th style='border:none;'>Production Sequence<sup>6</sup></th>
+            </tr>
+            {% for order in production_orders[0:10] %}
+              <tr>
+                <td style='border:none;'>{{order.production_number}}</td>
+                <td style='border:none;'>{{order.production_order}}</td>
+              </tr>
+            {% endfor %}
+          </table>
+          <p style="font-size: 1.1rem; text-align:left"><sup>5</sup> denotes a unique identifier for production orders <br> <sup>6</sup> denotes the material flow sequence (e.g., all flows start from 'A', the goods-issue warehouse and ends at 'L', the storage warehouse) </p>
+          <p style="font-size: 1.1rem; text-align:left">DISCLAIMER: The example aims to motivate the systems design problem, and is not a reflection of the work done by the project team at Halliburton.</p>
+          <div class="example-buttons">
+            <form method="POST" action="/#example" id="confirmation">
+              <button type="submit" class="example-button" name="change-data-button" value="Try Another Problem!">Try Another Problem</button>
+              <button type="button" class="example-button" onclick="location.href='/reconfiguration'" >Begin Layout Reconfiguration</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+

@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+}
+
+.navbar {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items:center;
+	top: 0;
+	z-index: 1;
+	width: 99.5%;
+	height: 60px;
+	background: rgba(0,0,0,0.7);
+}
+
+.navbar a {
+	margin-right: 10px;
+	font-size: 20px;
+	font-family: Roboto, Arial;
+	font-weight: bold;
+	color: #f4f4f4;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.navbar a:hover {
+	color: #b00000;
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+.logo {
+	display: flex;
+	margin-left: 10px;
+}
+
+.halliburton-logo {
+	height: 27px;
+}
+
+.tabs {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	margin-right: 170px;
+}
+
+.tabs a {
+	margin-right: 35px;
+}
+
+.about-tab {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	margin-right: 10px;
+}
+
+
+
