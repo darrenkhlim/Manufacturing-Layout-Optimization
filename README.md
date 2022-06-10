@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In fulfilment of IE3100R Systems Design Project, the team has embarked on a project with Halliburton to analyze their manufacturing facility and to propose layout alternatives. The Web application aims to provide a summary on the motivation, objectives, methodology and results achieved in this study. The web application is also embedded with a short example to illustrate the project achievements.
+In fulfilment of IE3100R Systems Design Project, the team has embarked on a project with Halliburton to analyze their manufacturing facility and to propose layout alternatives. The web application aims to provide a summary on the motivation, objectives, methodology and results achieved in this study. The web application is also embedded with a short example to illustrate the project achievements.
 
 ## Getting Started
 
